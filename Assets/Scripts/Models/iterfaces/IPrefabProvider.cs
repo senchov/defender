@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Models.iterfaces
+namespace Assets.Scripts.Models
 {
     interface IPrefabProvider
     {
-        GameObject GetPrefab();
+        GameObject GetPrefab(string prefab);
     }
 }

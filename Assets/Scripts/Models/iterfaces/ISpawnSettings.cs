@@ -8,5 +8,6 @@ namespace Assets.Scripts.Models
     public interface ISpawnSettings
     {
         List<float> GetTimeToSpawn();
+        List<string> GetEntitiesToSpawn();
     }
 }

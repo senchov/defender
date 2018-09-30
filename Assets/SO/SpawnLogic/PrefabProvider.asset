@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fb9b4f2d62c934bb5c4742521d70e6, type: 3}
+  m_Name: PrefabProvider
+  m_EditorClassIdentifier: 
+  Prefabs:
+  - Key: Bat
+    Prefab: {fileID: 1793719273062306, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
+  - Key: Bomber
+    Prefab: {fileID: 1527597495037050, guid: 86f3d8e17cd483f499ae679589089713, type: 2}
+  - Key: Onager
+    Prefab: {fileID: 1609746935592586, guid: a8305675293230542b35e05545089549, type: 2}

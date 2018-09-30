@@ -8,7 +8,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e520b4e5662666f4aa87ac02a6aec3ac, type: 3}
-  m_Name: SpawnSettings
+  m_Script: {fileID: 11500000, guid: c42b6c51cf9c52445ab1bbf90e8d6090, type: 3}
+  m_Name: DistanceToFortProvider
   m_EditorClassIdentifier: 
-  SpawnItems: []
+  Distances:
+  - Key: Bat
+    FloatValue: 1
+  - Key: Bomber
+    FloatValue: 3
+  - Key: Onager
+    FloatValue: 1

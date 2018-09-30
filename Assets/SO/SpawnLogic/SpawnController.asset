@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff4970021dbf2d4cb880b7ff7fb04d4, type: 3}
+  m_Name: SpawnController
+  m_EditorClassIdentifier: 
+  SpawnSettings: {fileID: 11400000, guid: 3f7e01391dc0c874d9a3470ccbce4ecf, type: 2}
+  PrefabProvider: {fileID: 11400000, guid: 589bc3156299f1b46a94799d623c3b7a, type: 2}
+  SpawnPointProvider: {fileID: 11400000, guid: 5f66dfc6f1a446d4fa7cce4cfa888c97, type: 2}

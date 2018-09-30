@@ -14,7 +14,7 @@ namespace Assets.Scripts.Models
         [SerializeField] private float HorizontalOffset = 20;
 
         private Camera MainCamera;
-        List<Vector3> SpawnPoints;
+        private List<Vector3> SpawnPoints;
 
         private Camera GetMainCamera
         {
@@ -28,29 +28,25 @@ namespace Assets.Scripts.Models
 
         public Vector3 GetSpawnPoint()
         {
-            FillSpawnPoints();
-
             int pointIndex = Random.Range(0, SpawnPoints.Count);
             return SpawnPoints[pointIndex];
         }
 
-        private void FillSpawnPoints()
+        public void FillSpawnPoints()
         {
-            if (SpawnPoints == null)
+            SpawnPoints = new List<Vector3>();
+            Vector3 leftDownCorner = GetMainCamera.ScreenToWorldPoint(new Vector2(0, 0));
+            Vector3 leftUpCorner = GetMainCamera.ScreenToWorldPoint(new Vector2(0, GetMainCamera.pixelHeight));
+            float currentHeight = MinHeight;
+            float heightDiff = leftUpCorner.y - leftDownCorner.y;
+            int pointCount = (int)((MaxHeight - MinHeight) / Step);
+            for (int i = 0; i < pointCount; i++)
             {
-                Vector3 leftDownCorner = GetMainCamera.ScreenToWorldPoint(new Vector2(0, 0));
-                Vector3 leftUpCorner = GetMainCamera.ScreenToWorldPoint(new Vector2(0, GetMainCamera.pixelHeight));
-                float currentHeight = MinHeight;
-                float heightDiff = leftUpCorner.y - leftDownCorner.y;
-                int pointCount = (int)((MaxHeight - MinHeight) / Step);
-                for (int i = 0; i < pointCount; i++)
-                {
-                    float xPos = leftDownCorner.x - HorizontalOffset;
-                    float yPos = leftDownCorner.y + heightDiff * currentHeight;
-                    Vector3 spawnPoint = new Vector3(xPos, yPos, 0);
-                    currentHeight += Step;
-                    SpawnPoints.Add(spawnPoint);
-                }
+                float xPos = leftDownCorner.x - HorizontalOffset;
+                float yPos = leftDownCorner.y + heightDiff * currentHeight;
+                Vector3 spawnPoint = new Vector3(xPos, yPos, 0);
+                currentHeight += Step;
+                SpawnPoints.Add(spawnPoint);
             }
         }
 

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c9b2da0364d3047b6b59da23016b1a, type: 3}
+  m_Name: FortDamageController
+  m_EditorClassIdentifier: 
+  DamageProviderModel: {fileID: 11400000, guid: 433b7f0ac00da62428efbe8fed7ce162,
+    type: 2}
+  Fort: {fileID: 11400000, guid: 2d18fc4e225d8214093e94044868f053, type: 2}
