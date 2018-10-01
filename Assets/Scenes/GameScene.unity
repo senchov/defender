@@ -639,15 +639,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4378407844839728, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.8820472
+      value: -5.35
       objectReference: {fileID: 0}
     - target: {fileID: 4378407844839728, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.9425646
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4378407844839728, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.2171875
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4378407844839728, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_LocalRotation.x
@@ -891,6 +891,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 52d1ac2e02566cc418b042360d4df7b3, type: 2}
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: a15022e514883cc48baac4dd1d43e226, type: 2}
         m_MethodName: Init
         m_Mode: 1
         m_Arguments:

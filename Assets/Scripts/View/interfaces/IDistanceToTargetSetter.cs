@@ -8,5 +8,6 @@ namespace Assets.Scripts.View
     public interface IDistanceToTargetSetter
     {
         void SetMinDistanceToTarget(float minDistance);
+        void SetMinDistanceToGetDamage(float minDistance);
     }
 }

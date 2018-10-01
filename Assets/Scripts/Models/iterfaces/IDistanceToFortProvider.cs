@@ -2,6 +2,7 @@
 {
     interface IDistanceToFortProvider
     {
-        float GetMinDistanceToFort(string id); 
+        float GetMinDistanceToFort(string id);
+        float GetMinDistanceToGetDamage (string id);
     }
 }

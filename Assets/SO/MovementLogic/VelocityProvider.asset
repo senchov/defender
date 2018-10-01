@@ -14,7 +14,7 @@ MonoBehaviour:
   Vectors:
   - Key: Bat
     Vector: {x: 1, y: 0, z: 0}
-    Speed: 0.1
+    Speed: 0.02
   - Key: Bomber
     Vector: {x: 1, y: 0, z: 0}
     Speed: 0.015

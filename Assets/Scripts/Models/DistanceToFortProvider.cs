@@ -7,13 +7,22 @@ namespace Assets.Scripts.Models
     [CreateAssetMenu(fileName = "DistanceToFortProvider", menuName = "ScriptableObject/Movement/DistanceToFortProvider")]
     class DistanceToFortProvider : ScriptableObject, IDistanceToFortProvider
     {
-        [SerializeField] private FloatByKey[] Distances;
+        [SerializeField] private DistancesByKey[] Distances;
 
         public float GetMinDistanceToFort(string id)
         {
             if (IsKeyPresented(id))
             {
-                return Distances.Where(x => x.Key == id).First().FloatValue;
+                return Distances.Where(x => x.Key == id).First().MinDistanceToFort;
+            }
+            return 0;
+        }
+
+        public float GetMinDistanceToGetDamage(string id)
+        {
+            if (IsKeyPresented(id))
+            {
+                return Distances.Where(x => x.Key == id).First().MinDistanceToGetDamage;
             }
             return 0;
         }
@@ -25,9 +34,10 @@ namespace Assets.Scripts.Models
     }
 
     [Serializable]
-    public class FloatByKey
+    public class DistancesByKey
     {
         public string Key;
-        public float FloatValue;
+        public float MinDistanceToFort;
+        public float MinDistanceToGetDamage;
     }
 }

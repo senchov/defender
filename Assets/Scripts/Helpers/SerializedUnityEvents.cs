@@ -12,5 +12,6 @@ using UnityEngine;
 [Serializable] public class DistanceToTargetUnityEvent : UnityEvent<string, ITargetSetter, IDistanceToTargetSetter> { }
 [Serializable] public class AtackebleUnityEvent : UnityEvent<IAtackable> { }
 [Serializable] public class FortStateReceiverUnityEvent : UnityEvent<IFortStateReceiver> { }
-
+[Serializable] public class GameObjectUnityEvent : UnityEvent<GameObject> { }
+[Serializable] public class TransformUnityEvent : UnityEvent<Transform> { }
 

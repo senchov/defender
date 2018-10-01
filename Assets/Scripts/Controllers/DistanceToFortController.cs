@@ -30,8 +30,11 @@ namespace Assets.Scripts.Controllers
         public void InitView(string id, ITargetSetter targetSetter, IDistanceToTargetSetter distanceSetter)
         {
             targetSetter.SetTarget(FortPos);
-            float distance = DistanceProviderGetter.GetMinDistanceToFort(id);
-            distanceSetter.SetMinDistanceToTarget(distance);
+            float minDistanceToFort = DistanceProviderGetter.GetMinDistanceToFort(id);
+            distanceSetter.SetMinDistanceToTarget(minDistanceToFort);
+
+            float inRangeDistance = DistanceProviderGetter.GetMinDistanceToGetDamage(id);
+            distanceSetter.SetMinDistanceToGetDamage(inRangeDistance);
         }
     }
 }

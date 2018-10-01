@@ -18,8 +18,7 @@ namespace Assets.Scripts.View
         }
 
         public void SetFortState(FortState state)
-        {
-            Debug.Log("FortView " + state);
+        {            
             FortSprite.sprite = GetSprite(state);
         }
 

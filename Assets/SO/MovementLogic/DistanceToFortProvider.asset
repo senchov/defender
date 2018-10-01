@@ -13,8 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Distances:
   - Key: Bat
-    FloatValue: 1
+    MinDistanceToFort: 1
+    MinDistanceToGetDamage: 15
   - Key: Bomber
-    FloatValue: 3
+    MinDistanceToFort: 3
+    MinDistanceToGetDamage: 15
   - Key: Onager
-    FloatValue: 1
+    MinDistanceToFort: 1
+    MinDistanceToGetDamage: 15

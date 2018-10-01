@@ -8,13 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc46b58c095cb8f4998fd8a3b55b5eb2, type: 3}
-  m_Name: DamageProvider
+  m_Script: {fileID: 11500000, guid: 9dfae6c096730154dbd405529e8e9a89, type: 3}
+  m_Name: ShootArchersController
   m_EditorClassIdentifier: 
-  Damages:
-  - Key: Bat
-    IntValue: 1
-  - Key: Bomber
-    IntValue: 2
-  - Key: Onager
-    IntValue: 3
+  TargetProvider: {fileID: 11400000, guid: b257c735957b9d84fb323c8aaf4ffa57, type: 2}

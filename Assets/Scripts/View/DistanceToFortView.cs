@@ -8,9 +8,13 @@ namespace Assets.Scripts.View
     {
         [SerializeField] private DistanceToTargetUnityEvent InitialEvent;
         [SerializeField] private UnityEvent ReachFort;
+        [SerializeField] private TransformUnityEvent InAtackRange;
 
         private Vector3 FortPos;
         private float DistanceToTarget;
+        private float MinDistanceToGetDamage;
+
+        private bool IsInAtackRange;
 
         private void Awake()
         {
@@ -27,6 +31,11 @@ namespace Assets.Scripts.View
             FortPos = target;           
         }
 
+        public void SetMinDistanceToGetDamage(float minDistance)
+        {
+            MinDistanceToGetDamage = minDistance;
+        }
+
         private void Update()
         {
             float distanceToFort = FortPos.x - transform.position.x;
@@ -35,6 +44,12 @@ namespace Assets.Scripts.View
                 ReachFort.Invoke();
                 this.enabled = false;
             }
-        }
+
+            if (!IsInAtackRange && distanceToFort < MinDistanceToGetDamage)
+            {
+                IsInAtackRange = true;
+                InAtackRange.Invoke(this.transform);
+            }
+        }        
     }
 }
