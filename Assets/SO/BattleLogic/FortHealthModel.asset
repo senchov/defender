@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867d59ae1762ee046afa2d20050075eb, type: 3}
   m_Name: FortHealthModel
   m_EditorClassIdentifier: 
-  Health: -1080
+  Health: 5000
   SettingItems:
   - State: 0
     MaxHealth: 300

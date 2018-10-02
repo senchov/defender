@@ -15,3 +15,15 @@ MonoBehaviour:
   - SpawnTime: 1
     SpawnEntities:
     - Bat
+  - SpawnTime: 1
+    SpawnEntities:
+    - Bat
+  - SpawnTime: 1
+    SpawnEntities:
+    - Bat
+  - SpawnTime: 1
+    SpawnEntities:
+    - Bat
+  - SpawnTime: 1
+    SpawnEntities:
+    - Bat

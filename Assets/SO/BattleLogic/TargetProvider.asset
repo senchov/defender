@@ -11,3 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185ba64f3154f914aaee2645be9d6637, type: 3}
   m_Name: TargetProvider
   m_EditorClassIdentifier: 
+  FuturePosPrediction: 1
+  InRangeSqrDistance: 1

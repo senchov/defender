@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Assets.Scripts.View;
+using Assets.Scripts.Models;
 
-public class QuadraticBezierCurveMover : MonoBehaviour
+public class QuadraticBezierCurveMover : MonoBehaviour, IProjectileMover
 {
     [SerializeField] private Transform MoveObject;
 
@@ -14,6 +16,7 @@ public class QuadraticBezierCurveMover : MonoBehaviour
     [SerializeField] public UnityEvent OnMoveStart;
     [SerializeField] public UnityEvent OnMoveComplete;
     [SerializeField] private bool IsShoot = false;
+    [SerializeField] private Events InnerEvents;
 
     public float FutureOffset = 0.1f;
     float MaxDistance = 0.99f;
@@ -26,7 +29,7 @@ public class QuadraticBezierCurveMover : MonoBehaviour
         MoveObject.transform.localPosition = GetCurvePoint(Mathf.Clamp(Distance, 0, MaxDistance), Points.Start.localPosition,
             Points.Controll.localPosition, Points.End.localPosition);
 
-        RotateTarget(Distance);
+       // RotateTarget(Distance);
     }
 
     public float SetDistance
@@ -50,26 +53,26 @@ public class QuadraticBezierCurveMover : MonoBehaviour
         if (time == 0)
             yield break;
 
-        OnMoveStart.Invoke();
+        InnerEvents.OnMoveStart.Invoke();
         float moveTime = 0;
         while (moveTime < time)
         {
             float distance = moveTime / time;
             moveTime += Time.deltaTime;
 
-            MoveObject.transform.localPosition = GetCurvePoint(Mathf.Clamp(Distance, 0, MaxDistance), start,
+            MoveObject.transform.localPosition = GetCurvePoint(Mathf.Clamp(distance, 0, MaxDistance), start,
                 controll, end);
-            RotateTarget(distance);
+            RotateTarget(distance,start,controll,end);
 
             yield return null;
         }
-        OnMoveComplete.Invoke();
+        InnerEvents.OnMoveComplete.Invoke();
     }
 
-    private void RotateTarget(float distance)
+    private void RotateTarget(float distance, Vector3 start, Vector3 controll, Vector3 end)
     {
-        Vector3 futurePos = GetCurvePoint(distance + FutureOffset, Points.Start.localPosition,
-        Points.Controll.localPosition, Points.End.localPosition);
+        Vector3 futurePos = GetCurvePoint(distance + FutureOffset, start,
+        controll, end);
 
         Vector2 futureVector = futurePos - MoveObject.transform.localPosition;
         float angle = Vector2.Angle(new Vector2(-1, 0), futureVector);
@@ -87,11 +90,23 @@ public class QuadraticBezierCurveMover : MonoBehaviour
         return curvePoint;
     }
 
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
     [System.Serializable]
     private class MovePoints
     {
         public Transform Start;
         public Transform Controll;
         public Transform End;
+    }
+
+    [System.Serializable]
+    private class Events
+    {
+        public UnityEvent OnMoveStart;
+        public UnityEvent OnMoveComplete;
     }
 }

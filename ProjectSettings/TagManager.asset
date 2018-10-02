@@ -7,6 +7,7 @@ TagManager:
   - Bat
   - Bomber
   - Onager
+  - Arrow
   layers:
   - Default
   - TransparentFX

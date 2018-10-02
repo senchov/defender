@@ -3,9 +3,8 @@
 namespace Assets.Scripts.Models
 {
     public interface ITargetProvider
-    {
-        void AddTarget(Transform target);
-        void RemoveTarget(Transform target);
+    {       
+        bool HasTarget { get; }
         Vector3 GetTarget();
     }
 }

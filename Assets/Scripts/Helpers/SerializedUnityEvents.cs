@@ -14,4 +14,4 @@ using UnityEngine;
 [Serializable] public class FortStateReceiverUnityEvent : UnityEvent<IFortStateReceiver> { }
 [Serializable] public class GameObjectUnityEvent : UnityEvent<GameObject> { }
 [Serializable] public class TransformUnityEvent : UnityEvent<Transform> { }
-
+[Serializable] public class ShootebleUnityEvent : UnityEvent<IShootable> { }

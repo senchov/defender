@@ -18,3 +18,5 @@ MonoBehaviour:
     Prefab: {fileID: 1527597495037050, guid: 86f3d8e17cd483f499ae679589089713, type: 2}
   - Key: Onager
     Prefab: {fileID: 1609746935592586, guid: a8305675293230542b35e05545089549, type: 2}
+  - Key: Arrow
+    Prefab: {fileID: 1098184216066614, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}

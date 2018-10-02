@@ -169,6 +169,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4361835763925348, guid: 6033a8f842577254c8d55a90b4e54d68,
     type: 2}
   m_PrefabInternal: {fileID: 142415344}
+--- !u!95 &142415346 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95941021684060944, guid: 6033a8f842577254c8d55a90b4e54d68,
+    type: 2}
+  m_PrefabInternal: {fileID: 142415344}
 --- !u!1001 &148225662
 Prefab:
   m_ObjectHideFlags: 0
@@ -630,6 +635,52 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86f3d8e17cd483f499ae679589089713, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1204790520
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262254019995132, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098184216066614, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ef3da25cb3ce784995fbfe556d8dbf6, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1237000119
 Prefab:
   m_ObjectHideFlags: 0
@@ -849,6 +900,92 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Vector3UnityEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!1 &1969896454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1969896455}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1969896455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969896454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.11, y: 0.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 142415345}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2019227225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1924891230966734, guid: 6033a8f842577254c8d55a90b4e54d68,
+    type: 2}
+  m_PrefabInternal: {fileID: 142415344}
+--- !u!114 &2019227228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019227225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cde444fd9a0fb646aa56ff2ead83621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InnerEvents:
+    TryShoot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: a15022e514883cc48baac4dd1d43e226, type: 2}
+          m_MethodName: ArcherAtack
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: ShootebleUnityEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+    Shoot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 142415346}
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    SpawnProjectile:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: GameObjectUnityEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  SpawnPoint: {fileID: 1969896455}
+  Duration:
+    Max: 1
+    Min: 0.5
 --- !u!1 &2104131941
 GameObject:
   m_ObjectHideFlags: 0

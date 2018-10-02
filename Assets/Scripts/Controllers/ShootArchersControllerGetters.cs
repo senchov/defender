@@ -25,5 +25,27 @@ namespace Assets.Scripts.Controllers
                 return _Initable;
             }
         }
+
+        private ITransformListHolder _TransformListHolder;
+        private ITransformListHolder TransformListGetter
+        {
+            get
+            {
+                if (_TransformListHolder == null)
+                    _TransformListHolder = TargetProvider as ITransformListHolder;
+                return _TransformListHolder;
+            }
+        }
+
+        private IPrefabProvider _PrefabProvide;
+        private IPrefabProvider PrefabProvideGetter
+        {
+            get
+            {
+                if (_PrefabProvide == null)
+                    _PrefabProvide = PrefabProvider as IPrefabProvider;
+                return _PrefabProvide;
+            }
+        }
     }
 }

@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Name: ShootArchersController
   m_EditorClassIdentifier: 
   TargetProvider: {fileID: 11400000, guid: b257c735957b9d84fb323c8aaf4ffa57, type: 2}
+  PrefabProvider: {fileID: 11400000, guid: 589bc3156299f1b46a94799d623c3b7a, type: 2}
+  Arrow: Arrow
