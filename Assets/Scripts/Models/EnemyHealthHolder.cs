@@ -1,12 +1,14 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Assets.Scripts.Models
 {
     [CreateAssetMenu(fileName = "EnemyHealthHolder", menuName = "ScriptableObject/Battle/EnemyHealthHolder")]
     class EnemyHealthHolder : ScriptableObject, IGameObjectAddeble, IGameObjectEventEmmitter, IInitable, ISetDamageByGameObject
     {
+        [SerializeField] private IntByKey[] EnemyDefaultHealth;      
 
         public event Action<GameObject> Emmit;
         private void EmmitHandler(GameObject go)
@@ -15,27 +17,48 @@ namespace Assets.Scripts.Models
                 Emmit(go);
         }
 
+        private Dictionary<GameObject, Health> HealthByGameObject;
+
         public void AddGameObject(GameObject go)
         {
-
+            if (!HealthByGameObject.ContainsKey(go))
+            {
+                int health = GetHealth(go.tag);
+                HealthByGameObject.Add(go, new Health(health));
+            }
         }
 
+        //call from main init unity event
         public void Init()
         {
-            
+            HealthByGameObject = new Dictionary<GameObject, Health>();
         }
 
-        public void SetDamage(GameObject obj, int damage)
-        {
-            
+        public void SetDamage(GameObject go, int damage)
+        {           
+            if (HealthByGameObject.ContainsKey(go))
+            {
+                HealthByGameObject[go].SetDamage(damage);                
+                if (HealthByGameObject[go].IsDead)
+                {                   
+                    HealthByGameObject.Remove(go);
+                    EmmitHandler(go);
+                }
+            }
         }
 
-        [Serializable]
-        private class StartHealth
+        private int GetHealth(string id)
         {
-            public int Bat = 150;
-            public int Bomber = 100;
-            public int Onager = 200;
+            if (IsKeyPresented(id))
+            {
+                return EnemyDefaultHealth.Where(x => x.Key == id).First().IntValue;
+            }
+            return 0;
+        }
+
+        private bool IsKeyPresented(string key)
+        {
+            return EnemyDefaultHealth.Select(x => x.Key).Contains(key);
         }
 
         private class Health : IDamageble
@@ -56,7 +79,7 @@ namespace Assets.Scripts.Models
             {
                 get
                 {
-                    return HealthAmount > 0;
+                    return HealthAmount < 1;
                 }
             }
         }

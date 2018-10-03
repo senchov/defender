@@ -70,7 +70,8 @@ namespace Assets.Scripts.Models
                 if (Vector3.SqrMagnitude(Targets[i].position - targetTransform.position) < InRangeSqrDistance)
                 {
                     EmmitHitEventHandler(Targets[i].gameObject,targetTransform.tag);
-                    Targets.Remove(Targets[i]);
+                  //  Debug.LogError("hit " + Targets[i].gameObject.name);
+                   // Targets.Remove(Targets[i]);
                     return true;
                 }
             }

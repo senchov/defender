@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212576092309635122}
   - component: {fileID: 114105211594036664}
   - component: {fileID: 114563485303224534}
+  - component: {fileID: 114037156416665856}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Arrow
@@ -42,6 +43,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114037156416665856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098184216066614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3c207f41da1c64aab6524284ca4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelayBeforeDestroy: 1
+  Sprite: {fileID: 212576092309635122}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114105211594036664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60,16 +79,6 @@ MonoBehaviour:
     Start: {fileID: 0}
     Controll: {fileID: 0}
     End: {fileID: 0}
-  OnMoveStart:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnMoveComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   IsShoot: 0
   InnerEvents:
     OnMoveStart:
@@ -79,7 +88,18 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     OnMoveComplete:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 114037156416665856}
+          m_MethodName: Die
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   FutureOffset: 0.1

@@ -11,10 +11,7 @@ public class QuadraticBezierCurveMover : MonoBehaviour, IProjectileMover
 
     [SerializeField] private float FlyTime;
     [SerializeField] [Range(0, 1)] private float Distance;
-    [SerializeField] private MovePoints Points;
-
-    [SerializeField] public UnityEvent OnMoveStart;
-    [SerializeField] public UnityEvent OnMoveComplete;
+    [SerializeField] private MovePoints Points;   
     [SerializeField] private bool IsShoot = false;
     [SerializeField] private Events InnerEvents;
 

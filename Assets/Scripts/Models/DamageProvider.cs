@@ -21,13 +21,13 @@ namespace Assets.Scripts.Models
         private bool IsKeyPresented(string key)
         {
             return Damages.Select(x => x.Key).Contains(key);
-        }
+        }        
+    }
 
-        [Serializable]
-        private class IntByKey
-        {
-            public string Key;
-            public int IntValue;
-        }
+    [Serializable]
+    public class IntByKey
+    {
+        public string Key;
+        public int IntValue;
     }
 }

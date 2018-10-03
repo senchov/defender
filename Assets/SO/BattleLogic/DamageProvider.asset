@@ -13,8 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damages:
   - Key: Bat
-    IntValue: 1
+    IntValue: 10
   - Key: Bomber
-    IntValue: 2
+    IntValue: 20
   - Key: Onager
-    IntValue: 3
+    IntValue: 30
+  - Key: Arrow
+    IntValue: 1

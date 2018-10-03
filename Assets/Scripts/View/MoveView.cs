@@ -32,6 +32,7 @@ namespace Assets.Scripts.View
         public void Stop()
         {
             StopMove.Invoke(this);
+            this.enabled = false;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Assets.Scripts.View
         [SerializeField] private Events InnerEvents;
         [SerializeField] private Transform SpawnPoint;
         [SerializeField] private ShootDuration Duration;
+        [SerializeField] private float SqrDistanceToDecreaseAngle = 5f;
         //TODO remove, refactor IAtackeble
         public event Action<string> OnAtack;
 
@@ -39,7 +40,12 @@ namespace Assets.Scripts.View
         {
             Vector2 dir = end - start;
             dir *= 0.5f;
-            dir = Quaternion.Euler(0, 0, -45.0f) * dir;
+            float angle = -45;
+            float dirSqrDist = dir.SqrMagnitude();
+            if (dirSqrDist < SqrDistanceToDecreaseAngle)
+                angle *= (dirSqrDist/SqrDistanceToDecreaseAngle);
+
+            dir = Quaternion.Euler(0, 0, angle) * dir;
             return new Vector3(dir.x, dir.y, 0) + start;
         }
 

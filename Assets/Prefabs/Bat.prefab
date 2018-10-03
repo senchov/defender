@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 212665363258105676}
   - component: {fileID: 95436649774194624}
   - component: {fileID: 114117079455188736}
+  - component: {fileID: 114302293663638088}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Bat
@@ -159,6 +160,46 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: TransformUnityEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114302293663638088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793719273062306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3c207f41da1c64aab6524284ca4a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DelayBeforeDestroy: 2
+  Sprite: {fileID: 212665363258105676}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 95436649774194624}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Death
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114746082767965554}
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114746082767965554
 MonoBehaviour:
   m_ObjectHideFlags: 1
