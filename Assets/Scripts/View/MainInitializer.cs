@@ -10,6 +10,11 @@ namespace Assets.Scripts.View
         private void Start()
         {
             Init.Invoke();
+        }       
+
+        public void ReInit()
+        {
+            Init.Invoke();
         }
     }
 }

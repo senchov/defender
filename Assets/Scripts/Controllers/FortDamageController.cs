@@ -12,6 +12,7 @@ namespace Assets.Scripts.Controllers
         [Validate(typeof(IFortStatebleItem))] [SerializeField] private ScriptableObject Fort;
 
         private IFortStateReceiver FortStateReceiver;
+        private IDieble FortView;
 
         //call from main init unity event
         public void Init()
@@ -22,6 +23,8 @@ namespace Assets.Scripts.Controllers
         private void OnFortStateChanges(FortState state)
         {
             FortStateReceiver.SetFortState(state);
+            if (state == FortState.Dead)
+                FortView.Die();
         }
 
         public void InitFortStateReceiver(IFortStateReceiver stateReceiver)
@@ -38,6 +41,11 @@ namespace Assets.Scripts.Controllers
         {
             int damage = DamageProviderGetter.GetDamage(id);
             DamagebleGetter.SetDamage(damage);
+        }
+
+        public void SubscribeToDie(IDieble dieble)
+        {
+            FortView = dieble;
         }
     }
 }

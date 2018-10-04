@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: FortHealthModel
   m_EditorClassIdentifier: 
   Health: 400
+  StartHealth: 400
   SettingItems:
   - State: 0
     MaxHealth: 300

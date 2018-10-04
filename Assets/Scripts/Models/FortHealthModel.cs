@@ -7,10 +7,17 @@ namespace Assets.Scripts.Models
     class FortHealthModel : ScriptableObject, IDamageble, IFortStatebleItem
     {
         public int Health;
+        public int StartHealth;
         [SerializeField] private StatesSettingItem[] SettingItems;
+        
 
         public event Action<FortState> OnFortStateChanges;
-        private FortState CurrentState = FortState.Powerfull;       
+        private FortState CurrentState = FortState.Powerfull;
+
+        private void OnEnable()
+        {
+            Health = StartHealth;
+        }
 
         public void SetDamage(int damage)
         {

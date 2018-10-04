@@ -15,3 +15,5 @@ using UnityEngine;
 [Serializable] public class GameObjectUnityEvent : UnityEvent<GameObject> { }
 [Serializable] public class TransformUnityEvent : UnityEvent<Transform> { }
 [Serializable] public class ShootebleUnityEvent : UnityEvent<IShootable> { }
+[Serializable] public class DiebleUnityEvent : UnityEvent<IDieble> { }
+

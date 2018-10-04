@@ -3,16 +3,13 @@
 namespace Assets.Scripts.Controllers
 {
     partial class SpawnController
-    {
-        private ISpawnSettings _SpawnSetings;
+    {       
         private ISpawnSettings SpawnSettingsGetter
         {
             get
-            {
-                if (_SpawnSetings == null)
-                    _SpawnSetings = SpawnSettings as ISpawnSettings;
-                return _SpawnSetings;
-            }
+            {               
+                return SettingsList[Level];
+            }           
         }
 
         private IPrefabProvider _PrefabProvide;

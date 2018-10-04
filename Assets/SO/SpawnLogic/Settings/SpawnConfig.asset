@@ -27,8 +27,6 @@ MonoBehaviour:
   - SpawnTime: 3
     SpawnEntities:
     - Bat
-    - Bomber
-    - Onager
   - SpawnTime: 3
     SpawnEntities:
     - Bat
@@ -37,25 +35,3 @@ MonoBehaviour:
   - SpawnTime: 3
     SpawnEntities:
     - Bat
-    - Bomber
-    - Onager
-  - SpawnTime: 3
-    SpawnEntities:
-    - Bat
-    - Bomber
-    - Onager
-  - SpawnTime: 3
-    SpawnEntities:
-    - Bat
-    - Bomber
-    - Onager
-  - SpawnTime: 3
-    SpawnEntities:
-    - Bat
-    - Bomber
-    - Onager
-  - SpawnTime: 3
-    SpawnEntities:
-    - Bat
-    - Bomber
-    - Onager

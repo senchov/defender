@@ -38,7 +38,21 @@ namespace Assets.Scripts.Models
 
         public void Init()
         {
+            DestroyAllEnemies();
+
             Targets = new List<Transform>();
+        }
+
+        private void DestroyAllEnemies()
+        {
+            if (Targets != null)
+            {
+                foreach (Transform item in Targets)
+                {
+                    if (item != null)
+                        Destroy(item.gameObject);
+                }
+            }
         }
 
         public void AddTarget(Transform target)
@@ -69,9 +83,7 @@ namespace Assets.Scripts.Models
             {
                 if (Vector3.SqrMagnitude(Targets[i].position - targetTransform.position) < InRangeSqrDistance)
                 {
-                    EmmitHitEventHandler(Targets[i].gameObject,targetTransform.tag);
-                  //  Debug.LogError("hit " + Targets[i].gameObject.name);
-                   // Targets.Remove(Targets[i]);
+                    EmmitHitEventHandler(Targets[i].gameObject, targetTransform.tag);
                     return true;
                 }
             }

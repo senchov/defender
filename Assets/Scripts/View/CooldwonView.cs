@@ -9,6 +9,8 @@ namespace Assets.Scripts.View
     class CooldwonView : MonoBehaviour, ICooldownView
     {
         [SerializeField] private CooldownViewUnityEvent Subscribe;
+        [SerializeField] private UnityEvent OnSpawnQueueEnded;
+        [SerializeField] private float DelayBetweenLevels = 20.0f;
         public event Action Cooldown;
         private Queue<float> CooldownQueue = new Queue<float>();
 
@@ -24,6 +26,7 @@ namespace Assets.Scripts.View
                 CooldownQueue.Enqueue(cooldown);
             }
 
+            StopAllCoroutines();
             StartCoroutine(Wait());
         }
 
@@ -38,7 +41,8 @@ namespace Assets.Scripts.View
             }
             else
             {
-                yield break;
+                yield return new WaitForSeconds(DelayBetweenLevels);
+                OnSpawnQueueEnded.Invoke();        
             }
         }
 
