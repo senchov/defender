@@ -9,6 +9,7 @@ namespace Assets.Scripts.View
         [SerializeField] private float DelayBeforeDestroy = 2.0f;
         [SerializeField] private SpriteRenderer Sprite;
         [SerializeField] private UnityEvent OnDie;
+        [SerializeField] private GameObjectUnityEvent OnDestroyEvent;
 
         public void Die()
         {
@@ -30,6 +31,7 @@ namespace Assets.Scripts.View
 
         private void OnDestroy()
         {
+            OnDestroyEvent.Invoke(this.gameObject);
             StopAllCoroutines();
         }
     }

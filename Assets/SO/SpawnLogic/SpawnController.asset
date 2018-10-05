@@ -18,5 +18,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8b41102c2365c845a3eaf4afd7bda1f, type: 2}
   - {fileID: 11400000, guid: d224b29c09a6c9c45999dd1c549b3cdc, type: 2}
   - {fileID: 11400000, guid: b2fe01b6dbc7ffa45a2fccbf30b8ed37, type: 2}
+  - {fileID: 11400000, guid: 4a68f0d92f167814dbe104b59c454f25, type: 2}
   PrefabProvider: {fileID: 11400000, guid: 589bc3156299f1b46a94799d623c3b7a, type: 2}
   SpawnPointProvider: {fileID: 11400000, guid: 5f66dfc6f1a446d4fa7cce4cfa888c97, type: 2}

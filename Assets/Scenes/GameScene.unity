@@ -168,6 +168,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4361835763925348, guid: 6033a8f842577254c8d55a90b4e54d68,
     type: 2}
   m_PrefabInternal: {fileID: 142415344}
+--- !u!1 &147917981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 147917982}
+  - component: {fileID: 147917983}
+  m_Layer: 0
+  m_Name: SortingLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &147917982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 147917981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2104131943}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &147917983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 147917981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da6c84518a02d44989133b5522e1f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fort: {fileID: 1245853045}
+  SpawnNotifier: {fileID: 955722587}
+  StartZ: -0.1
+  StepZ: -0.1
 --- !u!1001 &148225662
 Prefab:
   m_ObjectHideFlags: 0
@@ -934,6 +978,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114130422397476976, guid: 86f3d8e17cd483f499ae679589089713,
+        type: 2}
+      propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 147917983}
     - target: {fileID: 1527597495037050, guid: 86f3d8e17cd483f499ae679589089713, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -1083,11 +1132,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4378407844839728, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.35
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 4378407844839728, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.64
       objectReference: {fileID: 0}
     - target: {fileID: 4378407844839728, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1113,6 +1162,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114302293663638088, guid: c8b42615e5cca3943a27cb6ef183d915,
+        type: 2}
+      propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 147917983}
     - target: {fileID: 1793719273062306, guid: c8b42615e5cca3943a27cb6ef183d915, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -1584,6 +1638,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 147917983}
+        m_MethodName: ReInit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!4 &2104131943
@@ -1597,6 +1662,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 955722585}
+  - {fileID: 147917982}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1639,6 +1705,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114769667199334468, guid: a8305675293230542b35e05545089549,
+        type: 2}
+      propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 147917983}
     - target: {fileID: 1609746935592586, guid: a8305675293230542b35e05545089549, type: 2}
       propertyPath: m_IsActive
       value: 0

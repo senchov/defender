@@ -9,7 +9,8 @@ namespace Assets.Scripts.View
     {
         [SerializeField] private Transform Fort;
         [Validate(typeof(ISpawnNotifier))] [SerializeField] private UnityEngine.Object SpawnNotifier;
-        [SerializeField] private int StartSortingOrder = 1;
+        [SerializeField] private float StartZ = -0.1f;
+        [SerializeField] private float StepZ = -0.1f;
 
         private List<Enemy> Enemies;
         private float FortPosX;
@@ -31,14 +32,31 @@ namespace Assets.Scripts.View
             Enemies = new List<Enemy>();
             (SpawnNotifier as ISpawnNotifier).SpawnNotify += EnemyCreated;
             FortPosX = Fort.position.x;
-            DownPosY = GetMainCamera.ScreenToWorldPoint(new Vector2(0, 0)).y;
-            Debug.Log(DownPosY.ToString() + " " + GetMainCamera.ScreenToWorldPoint(new Vector2(0, 0)).ToString());
+            DownPosY = GetMainCamera.ScreenToWorldPoint(new Vector2(0, 0)).y;         
+        }
+
+        public void Update()
+        {
+            SetSortingOrder();
+        }
+
+        public void ReInit()
+        {
+            Enemies = new List<Enemy>();
         }
 
         private void EnemyCreated(GameObject obj)
         {
             Enemies.Add(new Enemy(obj.transform, FortPosX, DownPosY));
-            SetSortingOrder();
+        }
+
+        public void EnemyDestroyed(GameObject obj)
+        {
+            foreach (Enemy item in Enemies)
+            {
+                if (item.EnemyTransform == obj.transform)
+                    Enemies.Remove(item);
+            }
         }
 
         [ContextMenu("Set")]
@@ -46,40 +64,43 @@ namespace Assets.Scripts.View
         {
             Enemies.Sort();
 
-            int sortingOrder = StartSortingOrder;
+            float sortingOrder = StartZ;
             for (int i = 0; i < Enemies.Count; i++)
             {
-                Enemies[i].SetSortingOrder(sortingOrder ++);
+                if (Enemies[i].EnemyTransform == null)
+                {
+                    Enemies.RemoveAt(i);
+                    continue;
+                }
+
+                Enemies[i].SetSortingOrder(sortingOrder);
+                sortingOrder += StepZ;
             }
         }
 
         private class Enemy : IComparable<Enemy>
-        {
-            private SpriteRenderer Sprite;
+        {           
             public Transform EnemyTransform;
             private float FortPosX;
             private float DownPosY;
 
             public Enemy(Transform enemy, float fortPosX, float downPosY)
             {
-                EnemyTransform = enemy;
-                Sprite = enemy.GetComponent<SpriteRenderer>();
+                EnemyTransform = enemy;              
                 FortPosX = fortPosX;
                 DownPosY = downPosY;
             }
 
-            public void SetSortingOrder(int order)
+            public void SetSortingOrder(float order)
             {
-                Sprite.sortingOrder = order;
+                Vector3 enemyPos = EnemyTransform.position;
+                EnemyTransform.position = new Vector3(enemyPos.x, enemyPos.y, order);
             }
 
             public int CompareTo(Enemy other)
-            {
-                Debug.Log(this.EnemyTransform.name + other.EnemyTransform.name);
+            {       
                 float thisDistance = GetHeuristicDistance(this.EnemyTransform.position);
-                float otherDistance = GetHeuristicDistance(other.EnemyTransform.position);
-
-                Debug.Log(thisDistance + " " + otherDistance);
+                float otherDistance = GetHeuristicDistance(other.EnemyTransform.position);              
 
                 if (thisDistance < otherDistance)
                     return 1;
